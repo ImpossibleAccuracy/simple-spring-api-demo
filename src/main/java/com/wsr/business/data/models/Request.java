@@ -34,7 +34,7 @@ public class Request {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "\"ObjectiveId\"", nullable = false)
     @ToString.Exclude
-    private RequestType objective;
+    private RequestObjective objective;
 
     @Column(name = "\"ConfirmationTime\"")
     private Instant confirmationTime;

@@ -7,11 +7,11 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@Table(name = "\"RequestType\"")
+@Table(name = "\"RequestObjective\"")
 @Getter
 @Setter
 @ToString
-public class RequestType {
+public class RequestObjective {
     @Id
     @GeneratedValue
     @Column(name = "\"Id\"", nullable = false, updatable = false)
