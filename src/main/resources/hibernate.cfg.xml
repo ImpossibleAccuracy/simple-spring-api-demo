@@ -1,0 +1,33 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        <property name="hbm2ddl.auto">update</property>
+
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <property name="connection.url">jdbc:postgresql://localhost:5432/wsr-test</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">postgres</property>
+
+        <mapping class="com.wsr.business.data.models.User"/>
+        <mapping class="com.wsr.business.data.models.Document"/>
+
+    </session-factory>
+</hibernate-configuration>
+
+        <!--<property name="dialect">org.hibernate.dialect.MariaDBDialect</property>-->
+        <!--<property name="hbm2ddl.auto">none</property>-->
+
+        <!--<property name="show_sql">true</property>-->
+        <!--<property name="format_sql">true</property>-->
+
+        <!--<property name="connection.driver_class">org.mariadb.jdbc.Driver</property>-->
+        <!--<property name="connection.url">jdbc:mariadb://xsql-prdb-clone:3306/user1</property>-->
+        <!--<property name="connection.username">user1</property>-->
+        <!--<property name="connection.password">Wsr_user1</property>-->

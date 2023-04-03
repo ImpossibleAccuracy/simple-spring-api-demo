@@ -9,7 +9,7 @@ import java.time.Instant;
 import java.util.Set;
 
 @Entity
-@Table(name = "\"Request\"")
+@Table(name = "request")
 @Getter
 @Setter
 @ToString
@@ -23,38 +23,29 @@ public class Request {
     private Long id;
 
     @Nonnull
-    @Column(name = "\"StartTime\"", nullable = false)
     private Instant startTime;
 
     @Nullable
-    @Column(name = "\"EndTime\"", nullable = false)
     private Instant endTime;
 
     @Nonnull
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "\"ObjectiveId\"", nullable = false)
     @ToString.Exclude
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "\"objective_id\"")
     private RequestObjective objective;
 
-    @Column(name = "\"ConfirmationTime\"")
     private Instant confirmationTime;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "\"PlaceId\"", nullable = false)
     @ToString.Exclude
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "\"place_id\"")
     private Subdivision place;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "\"EmployeeId\"", nullable = false)
     @ToString.Exclude
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "\"employee_id\"")
     private Employee employee;
 
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(
-            name = "\"Request_Visitor\"",
-            joinColumns = @JoinColumn(name = "\"VisitorId\""),
-            inverseJoinColumns = @JoinColumn(name = "\"RequestId\"")
-    )
     @ToString.Exclude
     private Set<User> visitors;
 

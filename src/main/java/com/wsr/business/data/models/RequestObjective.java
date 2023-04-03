@@ -7,7 +7,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@Table(name = "\"RequestObjective\"")
+@Table(name = "request_objective")
 @Getter
 @Setter
 @ToString
@@ -18,6 +18,5 @@ public class RequestObjective {
     private Long id;
 
     @Nonnull
-    @Column(name = "\"Title\"", nullable = false)
     private String title;
 }

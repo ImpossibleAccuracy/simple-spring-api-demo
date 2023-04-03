@@ -5,10 +5,11 @@ import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.sql.Timestamp;
 import java.time.Instant;
 
 @Entity
-@Table(name = "\"User\"")
+@Table(name = "\"user\"")
 @Getter
 @Setter
 @ToString
@@ -18,63 +19,63 @@ import java.time.Instant;
 public class User {
     @Id
     @GeneratedValue
-    @Column(name = "\"Id\"", nullable = false, updatable = false)
+    @Column(name = "\"id\"", nullable = false, updatable = false)
     private Long id;
 
     @Nullable
-    @Column(name = "\"Email\"", unique = true)
+    @Column(name = "\"email\"", unique = true)
     private String email;
 
     @Nullable
-    @Column(name = "\"Login\"")
+    @Column(name = "\"login\"")
     private String login;
 
     @Nullable
-    @Column(name = "\"Phone\"")
+    @Column(name = "\"phone\"")
     private String phone;
 
     @Nullable
-    @Column(name = "\"Password\"")
+    @Column(name = "\"password\"")
     private String password;
 
     @Nonnull
-    @Column(name = "\"Name\"")
+    @Column(name = "\"name\"")
     private String name;
 
     @Nullable
-    @Column(name = "\"Surname\"")
+    @Column(name = "\"surname\"")
     private String surname;
 
     @Nonnull
-    @Column(name = "\"Patronymic\"")
+    @Column(name = "\"patronymic\"")
     private String patronymic;
 
     @Nullable
-    @Column(name = "\"Organization\"")
+    @Column(name = "\"organization\"")
     private String organization;
 
     @Nonnull
-    @Column(name = "\"Comment\"")
+    @Column(name = "\"comment\"")
     private String comment;
 
     @Nonnull
-    @Column(name = "\"BirthDate\"")
-    private Instant birthDate = Instant.now();
+    @Column(name = "\"birthDate\"")
+    private Timestamp birthDate = Timestamp.from(Instant.now());
 
     @Nonnull
-    @Column(name = "\"PassportSeries\"")
+    @Column(name = "\"passport_series\"")
     private String passportSeries;
 
     @Nonnull
-    @Column(name = "\"PassportNumber\"")
+    @Column(name = "\"passport_number\"")
     private String passportNumber;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "\"PhotoId\"")
+    @JoinColumn(name = "\"photo_id\"")
     @ToString.Exclude
     private Document photo;
 
     @Nonnull
-    @Column(name = "\"CreationTime\"", nullable = false)
-    private Instant creationTime = Instant.now();
+    @Column(name = "\"creation_time\"", nullable = false)
+    private Timestamp creationTime = Timestamp.from(Instant.now());
 }

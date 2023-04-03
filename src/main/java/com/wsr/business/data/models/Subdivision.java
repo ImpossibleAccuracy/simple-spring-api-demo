@@ -6,7 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "\"Subdivision\"")
+@Table(name = "subdivision")
 @Getter
 @Setter
 public class Subdivision {
@@ -16,6 +16,5 @@ public class Subdivision {
     private Long id;
 
     @Nonnull
-    @Column(name = "\"Title\"", nullable = false)
     private String title;
 }

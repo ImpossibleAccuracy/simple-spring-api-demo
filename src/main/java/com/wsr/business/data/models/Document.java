@@ -7,26 +7,26 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@Table(name = "\"Image\"")
+@Table(name = "image")
 @Getter
 @Setter
 @ToString
 public class Document {
     @Id
     @GeneratedValue
-    @Column(name = "\"Id\"", nullable = false, updatable = false)
+    @Column(name = "\"id\"", nullable = false, updatable = false)
     private Long id;
 
     @Lob
     @Nonnull
-    @Column(name = "\"Data\"", nullable = false)
+    @Column(name = "\"data\"", nullable = false)
     private Byte[] data;
 
     @Nonnull
-    @Column(name = "\"Name\"", nullable = false)
+    @Column(name = "\"name\"", nullable = false)
     private String name;
 
     @Nonnull
-    @Column(name = "\"Type\"", nullable = false)
+    @Column(name = "\"type\"", nullable = false)
     private String type;
 }
